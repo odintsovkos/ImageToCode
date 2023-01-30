@@ -1,0 +1,30 @@
+﻿<mah:MetroWindow x:Class="ImageToCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageToCode"
+        mc:Ignorable="d"
+        Title="Image To Code Converter" Height="320" Width="430" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="LaunchGitHubSite" ToolTip="Open up the GitHub site">
+                <iconPacks:PackIconModern Width="22"
+                                  Height="22"
+                                  Kind="SocialGithubOctocat" />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="430*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnOpenImage" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Content="Открыть изображение" HorizontalAlignment="Center" Margin="0,19,0,0" VerticalAlignment="Top" Click="btnOpenImage_Click" Height="32" Width="170" Grid.Column="1" Background="#CC0078D7" BorderThickness="1,1,1,1"/>
+        <Image x:Name="imageBox" Margin="0,105,0,0" Width="170" Height="170" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="btnSaveCodeToFile" Content="Сохранить код в файл" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Click="btnSaveCodeToFile_Click" Width="170" IsEnabled="False" Height="32" Grid.Column="1" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" BorderThickness="1,1,1,1"/>
+        <Label x:Name="label" Content="Width:" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="13,105,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Background="#CC0078D7" Height="43" BorderBrush="Black" HorizontalContentAlignment="Center" Visibility="Hidden" BorderThickness="1,1,1,1"/>
+    </Grid>
+</mah:MetroWindow>
